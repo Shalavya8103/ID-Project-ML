@@ -9,8 +9,8 @@ from IPython.display import Image
 import cv2
 import numpy as np
 import mediapipe as mp
-#import argparse
-#import imutils
+import argparse
+import imutils
 import math
 from PIL import Image
 import easyocr
@@ -30,7 +30,6 @@ def form():
 def upload():
     if request.method == 'POST':
         f = request.files['file']
-        print("vaibhav",f)
         reader=easyocr.Reader(['en'])    
         img = cv2.imread(f.filename)
         print("cv2 img",img)
