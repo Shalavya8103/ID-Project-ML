@@ -2,15 +2,11 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 #import http response
 from flask_http_response import success, result, error
 
-import matplotlib.pyplot as plt 
 import cv2
 from pylab import rcParams
 from IPython.display import Image
-import cv2
 import numpy as np
 import mediapipe as mp
-import argparse
-import imutils
 import math
 from PIL import Image
 import easyocr
@@ -39,7 +35,6 @@ def upload():
         face_detection = mp_face_detection.FaceDetection(model_selection=1, min_detection_confidence=0.5)
         mp_drawing = mp.solutions.drawing_utils
 
-        #plt.title("Initial Image");plt.axis('on');plt.imshow(img);plt.show()
 
         img_height = img.shape[0]
         img_width = img.shape[1]
@@ -84,9 +79,6 @@ def upload():
         out = im_pil.rotate(angle)
         #img1 = img
         img1 = np.array(out)
-
-        #plt.title("Resultant Image");plt.axis('on');plt.imshow(img1);plt.show()
-
         #Taking the newly rotated as an input
 
         img_height = img1.shape[0]
@@ -144,16 +136,13 @@ def upload():
         for i in output:
             for j in i:
                 if(j == "VELLORE CAMPUS" or j == "CAMPUS"):
-                    print("flag\n")
                     result = output[output.index(i) + 1 : -1]
 
         #printing the resultant text
         l = []
         for i in result:
             a,b,c = i
-            #print(b)
             l.append(b)
-        print("list printing",l)
     return render_template('index.html',l=l)
 
 #call main
