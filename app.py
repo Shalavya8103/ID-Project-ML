@@ -38,7 +38,6 @@ def upload():
         mp_face_detection = mp.solutions.face_detection
         face_detection = mp_face_detection.FaceDetection(model_selection=1, min_detection_confidence=0.5)
         mp_drawing = mp.solutions.drawing_utils
-        # Face Analisys
 
         #plt.title("Initial Image");plt.axis('on');plt.imshow(img);plt.show()
 
