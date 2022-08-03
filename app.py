@@ -67,7 +67,7 @@ def upload():
         lex = (face_data.relative_keypoints[1].x)
         ley = (face_data.relative_keypoints[1].y)
 
-        #
+        #Calculating the angle between the nose and the left eye
 
         start_point = (ID_x, ID_y)
         end_point = (int(ID_x+box_width),int(ID_y+box_height))
