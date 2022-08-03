@@ -3,8 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_http_response import success, result, error
 
 import cv2
-from pylab import rcParams
-from IPython.display import Image
+from matplotlib import rcParams
 import numpy as np
 import mediapipe as mp
 import math
